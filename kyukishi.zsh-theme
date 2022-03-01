@@ -46,13 +46,13 @@ function get_config() {
   # local path_after_color=
 
   # Git
-  # local git_color=
+  local git_color='$FG[208]'
   local git_prefix="$(get_icon VCS_GIT_ICON)("
   local git_suffix=')'
   local git_dirty='*'
   local git_clean=''
   local git_before=" "
-  local git_before_color='$FG[237]'
+  local git_before_color='$FG[240]'
   local git_after=' '
   # local git_after_color=
 
@@ -60,12 +60,12 @@ function get_config() {
   local multiline=true
   # local multiline_first_prefix=
   # local multiline_first_prefix_color=
-  local multiline_last_prefix=" $(get_icon MULTILINE_LAST_PROMPT_PREFIX)"
+  local multiline_last_prefix=" $(get_icon MULTILINE_LAST_PROMPT_PREFIX)$(get_icon RULER_CHAR)"
   local multiline_last_prefix_color='$FG[240]'
 
   # Prefix
-  local prefix='\$  '
-  local prefix_color="$FG[240]$(get_icon RULER_CHAR)$FG[169]"
+  local prefix='\$ '
+  local prefix_color='$FG[169]'
 
   eval "local value=\"\${$1}\""
   echo "$value"
