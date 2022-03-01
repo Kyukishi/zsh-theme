@@ -26,7 +26,7 @@ function get_icon() {
   local MULTILINE_LAST_PROMPT_PREFIX='\u2570\U2500'
   local APPLE_ICON='\uF179'
   local WINDOWS_ICON='\uF17A'$s
-  local FREEBSD_ICON='\UF30C '
+  local FREEBSD_ICON='\UF30C'
   local ANDROID_ICON='\uF17B'
   local LINUX_ARCH_ICON='\uF303'
   local LINUX_CENTOS_ICON='\uF304'$s
