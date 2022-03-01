@@ -31,7 +31,7 @@ function get_config() {
   # local username_seperator_color=
   # local username_before_color=
   local username_after=''
-  if [ id\ -u = 0 ]
+  if [ id\ -u='0' ]
   then
     local username_user_color="$fg[red]"
     local username_after_color=' %b$BG[235]$FG[237]'
@@ -71,7 +71,7 @@ function get_config() {
   local multiline_last_prefix_color='$FG[240]'
 
   # Prefix
-  if [ id\ -u = 0 ]
+  if [ id\ -u='0' ]
   then
     local prefix='# '
     local prefix_color='$fg[red]'
