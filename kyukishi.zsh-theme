@@ -26,14 +26,17 @@ function get_config() {
 
   # Username
   local username_user_color="$FG[169]"
+  # local username_user_color="$fg[red]" (ROOT)
   local username_host_show=false
   # local username_host_color=
   # local username_seperator='@'
   # local username_seperator_color=
   # local username_before=
+  # local username_before='%B' (ROOT)
   # local username_before_color=
   local username_after=''
   local username_after_color=' $BG[235]$FG[237]'
+  # local username_after_color=' %b$BG[235]$FG[237]' (ROOT)
 
   # Path
   local path_color='$BG[235]$FG[117]'
@@ -65,7 +68,9 @@ function get_config() {
 
   # Prefix
   local prefix='\$ '
+  # local prefix='# ' (ROOT)
   local prefix_color='$FG[169]'
+  # local prefix_color='$fg[red]' (ROOT)
 
   eval "local value=\"\${$1}\""
   echo "$value"
