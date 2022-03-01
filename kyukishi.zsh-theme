@@ -25,18 +25,22 @@ function get_config() {
   local prompt_right='<success>'
 
   # Username
-  local username_user_color="$FG[169]"
-  # local username_user_color="$fg[red]" (ROOT)
   local username_host_show=false
   # local username_host_color=
   # local username_seperator='@'
   # local username_seperator_color=
-  # local username_before=
-  # local username_before='%B' (ROOT)
   # local username_before_color=
   local username_after=''
-  local username_after_color=' $BG[235]$FG[237]'
-  # local username_after_color=' %b$BG[235]$FG[237]' (ROOT)
+  if [ id\ -u = 0 ]
+  then
+    local username_user_color="$fg[red]"
+    local username_after_color=' %b$BG[235]$FG[237]'
+    local username_before='%B'
+  else
+    local username_user_color="$FG[169]"
+    local username_after_color=' $BG[235]$FG[237]'
+    # local username_before=
+  fi
 
   # Path
   local path_color='$BG[235]$FG[117]'
@@ -67,10 +71,14 @@ function get_config() {
   local multiline_last_prefix_color='$FG[240]'
 
   # Prefix
-  local prefix='\$ '
-  # local prefix='# ' (ROOT)
-  local prefix_color='$FG[169]'
-  # local prefix_color='$fg[red]' (ROOT)
+  if [ id\ -u = 0 ]
+  then
+    local prefix='# '
+    local prefix_color='$fg[red]'
+  else
+    local prefix='\$ '
+    local prefix_color='$FG[169]'
+  fi
 
   eval "local value=\"\${$1}\""
   echo "$value"
