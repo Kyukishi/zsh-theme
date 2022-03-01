@@ -29,6 +29,7 @@ function get_success() {
 }
 
 function get_git() {
+  if [ -d .git ]; then
   ZSH_THEME_GIT_PROMPT_PREFIX="$(get_config git_prefix)"
   ZSH_THEME_GIT_PROMPT_SUFFIX="$(get_config git_suffix)"
   ZSH_THEME_GIT_PROMPT_DIRTY="$(get_config git_dirty)"
@@ -37,7 +38,8 @@ function get_git() {
 %{$(get_config git_before_color)%}$(get_config git_before)%{%f%}\
 %{$(get_config git_color)%}$(git_prompt_info)%{%f%}\
 %{$(get_config git_after_color)%}$(get_config git_after)%{%f%}\
-"
+";
+  fi
 }
 
 function get_prefix() {

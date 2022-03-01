@@ -47,11 +47,11 @@ function get_config() {
 
   # Git
   local git_color='$FG[208]'
-  local git_prefix="$(get_icon VCS_GIT_ICON)("
-  local git_suffix=')'
-  local git_dirty='*'
-  local git_clean=''
-  local git_before=" "
+  local git_prefix="$(get_icon VCS_GIT_ICON)$(get_icon VCS_BRANCH_ICON)"
+  # local git_suffix=
+  local git_dirty="*"
+  # local git_clean=
+  local git_before=' '
   local git_before_color='$FG[240]'
   local git_after=' '
   # local git_after_color=
