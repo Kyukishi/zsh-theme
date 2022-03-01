@@ -82,7 +82,7 @@ $(get_prompt $(get_config prompt_left))\
 %{$(get_config prompt_left_background)%}\
 %{$(get_config prompt_left_after_color)%}$(get_config prompt_left_after)%{%f%}\
 %{%b%}\
-$multiline_break$(get_prefix)"
+$multiline_break$(get_prefix)%{$reset_color%}"
 }
 
 function get_prompt_right() {

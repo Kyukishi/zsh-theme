@@ -16,7 +16,7 @@ function get_config() {
   local prompt_left_background='$BG[237]'
   local prompt_left_seperator='  '
   local prompt_left_seperator_color='$FG[245]'
-  local prompt_left_before=" $(get_icon APPLE_ICON) "
+  local prompt_left_before=" $(get_icon FREEBSD_ICON) "
   # local prompt_left_before_color=
   local prompt_left_after=''
   local prompt_left_after_color='%b$FG[235]'
@@ -61,11 +61,11 @@ function get_config() {
   # local multiline_first_prefix=
   # local multiline_first_prefix_color=
   local multiline_last_prefix=" $(get_icon MULTILINE_LAST_PROMPT_PREFIX)"
-  # local multiline_last_prefix_color=
+  local multiline_last_prefix_color='$FG[240]'
 
   # Prefix
-  local prefix='$ '
-  # local prefix_color=
+  local prefix='\$  '
+  local prefix_color="$FG[240]$(get_icon RULER_CHAR)$FG[169]"
 
   eval "local value=\"\${$1}\""
   echo "$value"
