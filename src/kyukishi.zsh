@@ -81,9 +81,29 @@ function get_prompt_right() {
   echo "$(get_prompt $(get_config prompt_right))"
 }
 
-PROMPT="$(get_prompt_left)"
+local prompt_left="$(get_prompt_left)"
+local prompt_left_short="%{$(get_config prefix_color)%}$(get_config prefix)%{$reset_color%}"
+local prompt_right="$(get_prompt_right)"
 
-RPROMPT="$(get_prompt_right)"
+set-long-prompt() {
+  PROMPT="$prompt_left"
+  RPROMPT="$prompt_right"
+}
+precmd_functions=(set-long-prompt)
+
+set-short-prompt() {
+  if [[ $PROMPT != "$prompt_left_short" ]]; then
+    PROMPT="$prompt_left_short"
+    zle .reset-prompt
+  fi
+}
+
+zle-line-finish() {
+  set-short-prompt
+}
+zle -N zle-line-finish
+
+trap 'set-short-prompt; return 130' INT
 
 # Cleanup
 unfunction get_root
