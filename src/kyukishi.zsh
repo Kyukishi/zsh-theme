@@ -92,6 +92,7 @@ set-long-prompt() {
 precmd_functions=(set-long-prompt)
 
 set-short-prompt() {
+  RPROMPT=''
   if [[ $PROMPT != "$prompt_left_short" ]]; then
     PROMPT="$prompt_left_short"
     zle .reset-prompt
