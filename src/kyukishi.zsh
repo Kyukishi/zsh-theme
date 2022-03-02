@@ -29,15 +29,7 @@ function get_success() {
 }
 
 function get_git() {
-  if [ -d .git ]
-  then
-    local git_info='$(git_prompt_info)'
-    echo "\
-%{$(get_config git_before_color)%}$(get_config git_before)%{%f%}\
-%{$(get_config git_color)%}$git_info%{%f%}\
-%{$(get_config git_after_color)%}$(get_config git_after)%{%f%}\
-"
-  fi
+  echo '$(git_prompt_info)'
 }
 
 function get_prefix() {

@@ -9,8 +9,8 @@ function get_root() {
 builtin source $(get_root)/src/icons.zsh
 
 # Git
-ZSH_THEME_GIT_PROMPT_PREFIX="$(get_icon VCS_GIT_ICON)$(get_icon VCS_BRANCH_ICON)"
-ZSH_THEME_GIT_PROMPT_SUFFIX=''
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[240]%} %{$FG[208]%}$(get_icon VCS_GIT_ICON)$(get_icon VCS_BRANCH_ICON)"
+ZSH_THEME_GIT_PROMPT_SUFFIX=' '
 ZSH_THEME_GIT_PROMPT_DIRTY='*'
 ZSH_THEME_GIT_PROMPT_CLEAN=''
 
@@ -57,13 +57,6 @@ function get_config() {
   # local path_before_color=
   local path_after=' '
   # local path_after_color=
-
-  # Git
-  local git_color='$FG[208]'
-  local git_before=' '
-  local git_before_color='$FG[240]'
-  local git_after=' '
-  # local git_after_color=
 
   # Multiline
   local multiline=true
