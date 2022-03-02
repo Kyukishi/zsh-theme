@@ -8,6 +8,12 @@ function get_root() {
 # Icons
 builtin source $(get_root)/src/icons.zsh
 
+# Git
+ZSH_THEME_GIT_PROMPT_PREFIX="$(get_icon VCS_GIT_ICON)$(get_icon VCS_BRANCH_ICON)"
+ZSH_THEME_GIT_PROMPT_SUFFIX=''
+ZSH_THEME_GIT_PROMPT_DIRTY='*'
+ZSH_THEME_GIT_PROMPT_CLEAN=''
+
 function get_config() {
 # If you don't know what these values mean you should leave them as they are!
 
@@ -16,7 +22,7 @@ function get_config() {
   local prompt_left_background='$BG[237]'
   local prompt_left_seperator='  '
   local prompt_left_seperator_color='$FG[245]'
-  local prompt_left_before=" $(get_icon APPLE_ICON) "
+  local prompt_left_before=" $(get_icon FREEBSD_ICON) "
   # local prompt_left_before_color=
   local prompt_left_after=''
   local prompt_left_after_color='%b$FG[235]'
@@ -54,10 +60,6 @@ function get_config() {
 
   # Git
   local git_color='$FG[208]'
-  local git_prefix="$(get_icon VCS_GIT_ICON)$(get_icon VCS_BRANCH_ICON)"
-  # local git_suffix=
-  local git_dirty="*"
-  # local git_clean=
   local git_before=' '
   local git_before_color='$FG[240]'
   local git_after=' '
